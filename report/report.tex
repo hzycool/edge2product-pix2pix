@@ -48,7 +48,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small 基于条件生成对抗网络的草图提示商品图像生成系统}
-\fancyhead[R]{\small 人工神经网络课程作业}
+\fancyhead[R]{\small Edge2Product}
 \fancyfoot[C]{\small \thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
@@ -59,8 +59,6 @@
   {\zihao{3}\heiti 基于条件生成对抗网络的草图提示商品图像生成系统\par}
   \vspace{0.6em}
   {\zihao{5} 黄正扬\par}
-  \vspace{0.25em}
-  {\small 人工神经网络课程作业\par}
   \vspace{0.25em}
   {\small 项目地址：\href{https://github.com/hzycool/edge2product-pix2pix}{https://github.com/hzycool/edge2product-pix2pix}\par}
   \vspace{0.7em}
@@ -130,7 +128,7 @@ $\lambda_{L1}$ & 100 \\
 评价指标使用 Mean L1、PSNR 和 SSIM。Mean L1 反映生成图像与目标图像之间的平均像素误差；PSNR 常用于评价重建质量；SSIM 用于衡量图像结构相似性。除定量指标外，实验还保存输入草图、目标图像和生成图像的三列对比图，用于观察模型是否保持轮廓以及是否生成合理的颜色区域。
 
 \section{系统实现}
-项目使用 PyTorch\cite{pytorchdocs} 实现。数据集模块负责加载成对图像、切分左右半图、调整尺寸，并将像素值归一化到 $[-1,1]$。模型模块包括 U-Net 生成器、PatchGAN 判别器、损失函数以及 Pix2Pix 训练封装。训练脚本会在每个 epoch 后记录 G loss、D loss、GAN loss 和 L1 loss，并保存样例生成图。
+项目使用 PyTorch 实现。数据集模块负责加载成对图像、切分左右半图、调整尺寸，并将像素值归一化到 $[-1,1]$。模型模块包括 U-Net 生成器、PatchGAN 判别器、损失函数以及 Pix2Pix 训练封装。训练脚本会在每个 epoch 后记录 G loss、D loss、GAN loss 和 L1 loss，并保存样例生成图。
 
 推理阶段只加载训练好的生成器，对验证图像中的边缘草图进行转换，并将输出反归一化到普通图像格式。评价脚本按照文件名匹配 generated 与 target 图像，计算 Mean L1、PSNR 和 SSIM，并同时保存 JSON 与 Markdown 格式的指标结果。项目还提供了 Gradio 演示界面，用于上传草图并展示生成结果。代码、报告和轻量实验结果已整理到 GitHub 仓库，项目地址见标题区。
 
@@ -190,7 +188,7 @@ Epoch & G loss & D loss & GAN loss & L1 loss \\
 判别器损失在 0.43 到 0.59 之间波动，没有出现明显崩溃，但小样本条件下的判别器很难学习到充分多样的局部纹理分布。对抗损失能够改善局部真实感，但当训练数据不足时，它也容易受到样本分布有限的影响。因此，本实验中模型更擅长恢复大致形状，而不是生成清晰且稳定的鞋面材质。
 
 \section{交互界面与项目发布}
-为便于课堂展示，项目实现了一个 Gradio\cite{gradiodocs} 演示界面。用户可以上传一张边缘草图，点击生成按钮后，程序调用训练好的生成器输出鞋类商品图像。该界面主要用于说明模型推理流程，实际生成效果仍取决于训练规模和 checkpoint 质量。
+为便于课堂展示，项目实现了一个 Gradio 演示界面。用户可以上传一张边缘草图，点击生成按钮后，程序调用训练好的生成器输出鞋类商品图像。该界面主要用于说明模型推理流程，实际生成效果仍取决于训练规模和 checkpoint 质量。
 
 \begin{figure}[H]
 \centering
