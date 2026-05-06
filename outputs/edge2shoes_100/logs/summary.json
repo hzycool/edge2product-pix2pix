@@ -1,0 +1,8 @@
+{
+  "dataset_size": 100,
+  "epochs": 5,
+  "device": "cpu",
+  "latest_generator": "D:\\人工神经网络模型\\hw3\\edge2product-pix2pix\\outputs\\edge2shoes_100\\checkpoints\\latest_G.pth",
+  "latest_discriminator": "D:\\人工神经网络模型\\hw3\\edge2product-pix2pix\\outputs\\edge2shoes_100\\checkpoints\\latest_D.pth",
+  "loss_csv": "D:\\人工神经网络模型\\hw3\\edge2product-pix2pix\\outputs\\edge2shoes_100\\logs\\loss.csv"
+}

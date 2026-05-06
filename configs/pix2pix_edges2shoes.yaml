@@ -1,0 +1,24 @@
+project:
+  name: edge2product-pix2pix
+  title: "Edge2Product: Sketch-to-Product Image Generation with Pix2Pix"
+
+dataset:
+  root: ./data/edges2shoes
+  subset_root: ./data/edges2shoes_100
+  direction: AtoB
+  img_size: 256
+
+train:
+  sample_size: 100
+  epochs: 5
+  batch_size: 1
+  lr: 0.0002
+  beta1: 0.5
+  lambda_l1: 100
+  save_freq: 1
+  vis_freq: 1
+  num_workers: 0
+
+experiment:
+  output_root: ./outputs/edge2shoes_100
+  num_inference_images: 20
