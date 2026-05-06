@@ -41,3 +41,4 @@ report/*.out
 report/*.synctex.gz
 report/*.toc
 report/*.xdv
+report/preview_pages/
