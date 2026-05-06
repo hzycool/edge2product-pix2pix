@@ -198,18 +198,15 @@ powershell -ExecutionPolicy Bypass -File scripts/publish_to_github_api.ps1
 
 Both upload paths avoid storing tokens in the project. The repository includes small sample data and lightweight results, but not the full dataset or large checkpoint files. If trained weights need to be shared later, upload them to GitHub Releases, Hugging Face, Google Drive, or another file hosting service.
 
-## 16. Resume Description
 
-Edge2Product implements a PyTorch Pix2Pix conditional GAN for translating shoe edge sketches into product-style images. The project covers training, inference, evaluation, visualization, and a lightweight web demo, with a reproducible report and experiment artifacts suitable for course presentation.
-
-## 17. Limitations
+## 16. Limitations
 
 - Small-sample GAN training is unstable.
 - L1 reconstruction can produce smooth textures.
 - Pix2Pix requires paired training images.
 - CPU experiments validate the pipeline but do not produce strong visual quality.
 
-## 18. Future Work
+## 17. Future Work
 
 - Train with more edges2shoes samples and longer schedules.
 - Add perceptual loss or feature matching loss.
@@ -217,7 +214,7 @@ Edge2Product implements a PyTorch Pix2Pix conditional GAN for translating shoe e
 - Compare Pix2Pix against CycleGAN, CUT, or diffusion-based image translation methods.
 - Package checkpoints through GitHub Releases or Hugging Face.
 
-## 19. References
+## 18. References
 
 - Goodfellow et al., Generative Adversarial Nets, 2014.
 - Isola et al., Image-to-Image Translation with Conditional Adversarial Networks, CVPR 2017.
@@ -225,6 +222,6 @@ Edge2Product implements a PyTorch Pix2Pix conditional GAN for translating shoe e
 - PyTorch documentation.
 - Gradio documentation.
 
-## 20. License
+## 19. License
 
 This repository is provided as a course and portfolio project template. Add a formal open-source license before public release if needed.
