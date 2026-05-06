@@ -43,7 +43,7 @@
 \setlength{\belowdisplayskip}{6pt}
 \setlength{\tabcolsep}{5pt}
 \renewcommand{\arraystretch}{1.12}
-\linespread{1.15}
+\linespread{1.20}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -83,7 +83,7 @@
 \section{相关工作}
 Goodfellow 等人提出的 GAN\cite{goodfellow2014gan} 通过最小最大博弈建立生成模型，为后续图像生成研究提供了基础框架。普通 GAN 通常从随机噪声出发生成样本，而条件 GAN 在生成过程里引入额外条件，使输出受到类别、文本或图像等信息控制。对于图像翻译任务，条件输入通常就是待转换的图像。
 
-Pix2Pix\cite{isola2017pix2pix} 将条件 GAN 用于成对图像到图像翻译，并引入 U-Net 生成器和 PatchGAN 判别器。该方法的一个特点是同时使用对抗损失和 L1 重建损失：前者鼓励生成图像更真实，后者约束输出与目标图像在像素层面接近。CycleGAN\cite{zhu2017cyclegan} 则主要用于非成对图像数据，通过循环一致性约束学习两个域之间的映射。由于 edges2shoes 数据集提供了边缘图和鞋子照片的成对样本，本实验采用 Pix2Pix 比采用非成对方法更直接，也便于分析训练目标与实验结果。
+Pix2Pix\cite{isola2017pix2pix} 将条件 GAN 用于成对图像到图像翻译，并引入 U-Net 生成器和 PatchGAN 判别器。该方法的一个特点是同时使用对抗损失和 L1 重建损失：前者鼓励生成图像更真实，后者约束输出与目标图像在像素层面接近。CycleGAN\cite{zhu2017cyclegan} 则主要用于非成对图像数据，通过循环一致性约束学习两个域之间的映射。由于 edges2shoes 数据集提供了成对样本，本实验采用 Pix2Pix 更直接，也便于分析结果。
 
 \section{方法}
 \subsection{任务定义}
