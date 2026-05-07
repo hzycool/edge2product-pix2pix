@@ -173,7 +173,7 @@ Epoch & G loss & D loss & GAN loss & L1 loss \\
 \end{tabular}
 \end{table}
 
-从表 \ref{tab:metrics} 可以看出，模型的重建质量还不高。PSNR 和 SSIM 数值偏低，说明在颜色和纹理细节上仍有明显误差；但 Mean L1 与损失曲线共同说明，小样本训练已经能够完成基本的映射学习。对于课程实验而言，本次结果更适合用于验证 Pix2Pix 的完整流程，而不是证明模型已经具备成熟的商品图生成质量。
+从表 \ref{tab:metrics} 可以看出，模型的重建质量还不高。PSNR 和 SSIM 数值偏低，说明在颜色和纹理细节上仍有明显误差；但 Mean L1 与损失曲线共同说明，小样本训练已经能够完成基本的映射学习。因此，本次实验还不能证明模型已经具备成熟的商品图生成质量，但实现了完整的Pix2Pix流程。
 
 \begin{figure*}[t]
 \centering
